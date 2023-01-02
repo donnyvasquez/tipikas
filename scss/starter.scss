@@ -25,17 +25,26 @@
 // Place variable overrides first, then import just the styles you need. Note that some stylesheets are required no matter what.
 
 // Toggle global options
-$enable-gradients: true;
-$enable-shadows: true;
+// $enable-gradients: true;
+// $enable-shadows: true;
+$enable-rounded:                              false !default;
+$enable-shadows:                              false !default;
+$enable-gradients:                            false !default;
 
 // Customize some defaults
 $body-color: #333;
 $body-bg: #fff;
 $border-radius: .4rem;
 $success: #7952b3;
+$red:     #cf3235 !default;
+$pink:    #e83e8c !default;
+$primary:       $red !default;
+$danger:        $pink !default;
+
 
 @import "bootstrap/scss/functions"; // Required
 @import "bootstrap/scss/variables"; // Required
+// @import "variables.scss";
 @import "bootstrap/scss/mixins"; // Required
 
 @import "bootstrap/scss/root"; // Required
@@ -52,8 +61,8 @@ $success: #7952b3;
 // @import "bootstrap/scss/button-group";
 // @import "bootstrap/scss/input-group"; // Requires forms
 // @import "bootstrap/scss/custom-forms";
-// @import "bootstrap/scss/nav";
-// @import "bootstrap/scss/navbar"; // Requires nav
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar"; // Requires nav
 // @import "bootstrap/scss/card";
 // @import "bootstrap/scss/breadcrumb";
 // @import "bootstrap/scss/pagination";
@@ -61,7 +70,7 @@ $success: #7952b3;
 // @import "bootstrap/scss/jumbotron";
 // @import "bootstrap/scss/alert";
 // @import "bootstrap/scss/progress";
-// @import "bootstrap/scss/media";
+@import "bootstrap/scss/media";
 // @import "bootstrap/scss/list-group";
 @import "bootstrap/scss/close";
 // @import "bootstrap/scss/toasts";
@@ -73,6 +82,7 @@ $success: #7952b3;
 @import "bootstrap/scss/utilities";
 // @import "bootstrap/scss/print";
 
+@import "../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
 
 //
 // Custom styles
@@ -81,7 +91,63 @@ $success: #7952b3;
 @import "icon-list";
 
 body {
-  padding: 3rem 1.5rem;
+  min-height: 100vh;
+}
+.dark{
+  background-color: $gray-900;
+  color: $gray-400;
+}
+main{
+  background: url('../img/bg_hero.jpeg') no-repeat bottom;
+  background-size: cover;
+  min-height: 100vh;
+  display: grid;
+  justify-items: center; 
+  align-items: center;
+  grid-auto-flow: row dense; 
+  grid-template-columns: 1fr; 
+  grid-template-rows: 1fr auto; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "logo"
+    "."; 
+  .logo{
+    grid-area: logo;
+    border-radius: 50%;
+    width: 15rem;
+    // border: 0.5rem white solid;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    img{
+    aspect-ratio: 1/1;
+    width: 100%;
+    position: relative;
+    background-color: $white;
+    }
+  }
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: 100%;
+    top: 0;
+    backdrop-filter: blur(3px) saturate(0.5);
+    transition: all 0.25s ease-in;
+}
+    &:hover::before{
+      backdrop-filter: blur(0px) saturate(0.75);
+    }
+}
+.navbar{
+  mix-blend-mode: hard-light;
+}
+@include media-breakpoint-up(lg) {
+  .navbar{
+    border-radius: 4rem;
+  }
 }
 
 // Style Bootstrap icons
