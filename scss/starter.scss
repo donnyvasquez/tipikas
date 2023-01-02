@@ -50,16 +50,16 @@ $danger:        $pink !default;
 @import "bootstrap/scss/root"; // Required
 @import "bootstrap/scss/reboot"; // Required
 @import "bootstrap/scss/type";
-// @import "bootstrap/scss/images";
+@import "bootstrap/scss/images";
 // @import "bootstrap/scss/code";
 @import "bootstrap/scss/grid";
 // @import "bootstrap/scss/tables";
-// @import "bootstrap/scss/forms";
+@import "bootstrap/scss/forms";
 @import "bootstrap/scss/buttons";
 @import "bootstrap/scss/transitions";
-// @import "bootstrap/scss/dropdown";
-// @import "bootstrap/scss/button-group";
-// @import "bootstrap/scss/input-group"; // Requires forms
+@import "bootstrap/scss/dropdown";
+@import "bootstrap/scss/button-group";
+@import "bootstrap/scss/input-group"; // Requires forms
 // @import "bootstrap/scss/custom-forms";
 @import "bootstrap/scss/nav";
 @import "bootstrap/scss/navbar"; // Requires nav
@@ -116,6 +116,7 @@ main{
     border-radius: 50%;
     width: 15rem;
     // border: 0.5rem white solid;
+    mix-blend-mode: hard-light;
     position: relative;
     display: block;
     overflow: hidden;
@@ -147,6 +148,22 @@ main{
 @include media-breakpoint-up(lg) {
   .navbar{
     border-radius: 4rem;
+  }
+}
+
+// Modal fullscreen
+.modal{
+  &-fullscreen{
+    .modal-dialog{
+      max-width: -webkit-fill-available;
+      border-radius: 0;
+      margin: auto;
+      height: 100%;
+      .modal-content{
+        border: 0;
+        height: 100%;
+      }
+    }
   }
 }
 

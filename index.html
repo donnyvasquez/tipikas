@@ -8,23 +8,26 @@
   </head>
   <body class="">
     <main>
-      <span class="logo"><img src="assets/img/tipikas.png" alt="Logotipo Tipikas"></span>
+      <span class="logo"><img src="assets/img/logo.jpeg" alt="Logotipo Tipikas"></span>
       <section class="row mb-md-3 w-100">
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary w-100 col-md-10 offset-md-1">
-          <a class="navbar-brand" href="#">Navbar</a>
+          <a class="navbar-brand" href="#"><img class="img" width="80" src="assets/img/tipikas.svg" alt="Logotipo Tipikas"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
+              <li class="nav-item">
+                <a data-toggle="modal" data-target="#preciosModal" href="#" class="nav-link"><i class="bi bi-tag"></i> Precios</a>
+              </li>
               <li class="nav-item active">
                 <a class="nav-link" target="_blank" href="https://wa.link/5dt8ye"><i class="bi bi-whatsapp"></i> Contactar <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"><i class="bi bi-instagram"></i> Instagram</a>
+                <a class="nav-link" target="_blank" href="https://instagram.com/tipikas.co"><i class="bi bi-instagram"></i> Instagram</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"><i class="bi bi-facebook"></i> Facebook</a>
+                <a class="nav-link" target="_blank" href="https://facebook.com/tipikas.co"><i class="bi bi-facebook"></i> Facebook</a>
               </li>
             </ul>
           </div>
@@ -32,6 +35,25 @@
       </section>
     </main>
 
+    <!-- Modal de precios -->
+    <div class="modal fade modal-fullscreen" id="preciosModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"><i class="bi bi-tag"></i> Precios y paquetes Tipikas</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary rounded-pill" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script type="module" src="assets/js/starter.js"></script>
   </body>
