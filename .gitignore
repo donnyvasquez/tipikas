@@ -1,6 +1,2 @@
 node_modules
-*.json
-*/*.json
-../node_modules
 .github
-scss
