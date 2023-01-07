@@ -40,6 +40,9 @@ $red:     #cf3235 !default;
 $pink:    #e83e8c !default;
 $primary:       $red !default;
 $danger:        $pink !default;
+$white:rgba($body-bg, .95) !default;;
+
+$navbar-dark-color: $white !default;
 
 
 @import "bootstrap/scss/functions"; // Required
